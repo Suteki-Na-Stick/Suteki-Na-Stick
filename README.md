@@ -13,5 +13,6 @@ If the injury to the tumble, it may become bedridden of life.
 We propose a "nice stick" in order to solve it.
 #function
 ・Users instantaneously, and perceived it as an inverted pendulum balance, can be free-standing upright canes.
+
 ・To place calls from the phone moves the wand itself and the compromise the employer.
 
