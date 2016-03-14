@@ -384,9 +384,6 @@ void loop() {
     stepper2.setSpeed(Moter_time_2);
     //stepper3.move(movetopos);
     stepper3.setSpeed(Moter_time_3);
-    stepper1.run();
-    stepper2.run();
-    stepper3.run();
     
   }
 }
