@@ -7,7 +7,7 @@
 #include <pt.h>
 
 //pinの番号
-#define Moter_1 10
+#define Moter_1 22
 #define Moter_2 11
 #define Moter_3 12
 #define Index_gain_flag 5

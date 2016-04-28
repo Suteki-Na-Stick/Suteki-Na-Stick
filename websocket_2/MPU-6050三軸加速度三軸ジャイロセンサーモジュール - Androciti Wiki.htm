@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="EUC-JP" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=EUC-JP" />
+ <meta http-equiv="content-style-type" content="text/css" />
+
+ <title>MPU-6050三軸加速度三軸ジャイロセンサーモジュール - Androciti Wiki</title>
+
+ <link rel="SHORTCUT ICON" href="image/favicon.ico" />
+ <link rel="stylesheet" type="text/css" media="screen" href="skin/pukiwiki.css.php?charset=Shift_JIS" charset="Shift_JIS" />
+ <link rel="stylesheet" type="text/css" media="print"  href="skin/pukiwiki.css.php?charset=Shift_JIS&amp;media=print" charset="Shift_JIS" />
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="http://wiki.androciti.com/index.php?cmd=rss" />
+
+</head>
+<body>
+
+<div id="header">
+ <a href="http://wiki.androciti.com/index.php?%A5%A2%A5%F3%A5%C9%A5%ED%20%A5%B7%A5%C6%A5%A3wiki"><img id="logo" src="image/androciti_S.jpg" width="330" height="54" alt="androciti wiki" title="androciti wiki" /></a>
+
+ <h1 class="title"><a href="http://wiki.androciti.com/index.php?plugin=related&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB">MPU-6050三軸加速度三軸ジャイロセンサーモジュール</a> </h1>
+ 
+<!--
+    <a href="http://wiki.androciti.com/index.php?MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB"><span class="small">http://wiki.androciti.com/index.php?MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB</span></a>
+ -->
+</div>
+
+
+<div id="navigator">
+ [ <a href="http://wiki.androciti.com/index.php?%A5%A2%A5%F3%A5%C9%A5%ED%20%A5%B7%A5%C6%A5%A3wiki" >トップ</a> ] &nbsp;
+
+ [
+ 	<a href="http://wiki.androciti.com/index.php?cmd=edit&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" >編集</a> |
+			<a href="http://wiki.androciti.com/index.php?cmd=unfreeze&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" >凍結解除</a> |
+	  <a href="http://wiki.androciti.com/index.php?cmd=diff&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" >差分</a> 	| <a href="http://wiki.androciti.com/index.php?cmd=backup&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" >バックアップ</a>  	| <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=upload&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" >添付</a>  | <a href="http://wiki.androciti.com/index.php?MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" >リロード</a> ] &nbsp;
+
+ [
+ 	<a href="http://wiki.androciti.com/index.php?plugin=newpage&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" >新規</a> |
+    <a href="http://wiki.androciti.com/index.php?cmd=list" >一覧</a>  | <a href="http://wiki.androciti.com/index.php?cmd=search" >単語検索</a> | <a href="http://wiki.androciti.com/index.php?RecentChanges" >最終更新</a> | <a href="http://wiki.androciti.com/index.php?Help" >ヘルプ</a> ]
+
+</div>
+
+<hr class="full_hr" />
+<table border="0" style="width:100%">
+ <tr>
+  <td class="menubar">
+   <div id="menubar">
+<h2 id="content_2_0">Menu</h2>
+<ul><li><a href="http://wiki.androciti.com/index.php?%A5%A2%A5%F3%A5%C9%A5%ED%20%A5%B7%A5%C6%A5%A3wiki" title="アンドロ シティwiki (624d)">HOME</a></li>
+<li>Arduino本体
+<ul><li><a href="http://wiki.androciti.com/index.php?Arduino%20Uno" title="Arduino Uno (992d)">Uno</a></li>
+<li><a href="http://wiki.androciti.com/index.php?Arduino%20Leonardo" title="Arduino Leonardo (992d)">Leonardo</a></li></ul></li>
+<li>Arduinoシールド
+<ul><li><a href="http://wiki.androciti.com/index.php?Arduino%A5%A4%A1%BC%A5%B5%A5%CD%A5%C3%A5%C8%A5%B7%A1%BC%A5%EB%A5%C9" title="Arduinoイーサネットシールド (1237d)">イーサネットシールド</a></li>
+<li><a href="http://wiki.androciti.com/index.php?Arduino%20LCD%A5%AD%A1%BC%A5%D1%A5%C3%A5%C9%A5%B7%A1%BC%A5%EB%A5%C9" title="Arduino LCDキーパッドシールド (1122d)">LCDキーパッドシールド</a></li></ul></li>
+<li>Raspberry Pi
+<ul><li><a href="http://wiki.androciti.com/index.php?Raspberry%20Pi%A5%DC%A1%BC%A5%F3%A5%B9%A5%BF%A5%A4%A5%EB%A5%AF%A5%EA%A5%A2%A5%B1%A1%BC%A5%B9" title="Raspberry Piボーンスタイルクリアケース (886d)">Raspberry Piボーンスタイルクリアケース</a></li>
+<li><a href="http://wiki.androciti.com/index.php?Raspberry%20Pi%A5%B1%A1%BC%A5%B9%CD%D1%A5%E2%A5%CB%A5%BF%2F%A5%C6%A5%EC%A5%D3%B8%C7%C4%EA%A5%D1%A5%CD%A5%EB" title="Raspberry Piケース用モニタ/テレビ固定パネル (866d)">Raspberry Piケース用モニタ/テレビ固定パネル</a></li>
+<li><a href="http://wiki.androciti.com/index.php?PL2303HX%C6%E2%C2%A2USB%A5%B7%A5%EA%A5%A2%A5%EB%CA%D1%B4%B9%A5%B1%A1%BC%A5%D6%A5%EB" title="PL2303HX内蔵USBシリアル変換ケーブル (1023d)">PL2303HX内蔵USBシリアル変換ケーブル</a></li>
+<li><a href="http://wiki.androciti.com/index.php?Raspberry%20Pi%CD%D1%A5%D6%A5%EC%A5%C3%A5%C9%A5%DC%A1%BC%A5%C9%C0%DC%C2%B3T%B7%BFGPIO%A5%A8%A5%AF%A5%B9%A5%C6%A5%F3%A5%B7%A5%E7%A5%F3%A5%AD%A5%C3%A5%C8" title="Raspberry Pi用ブレッドボード接続T型GPIOエクステンションキット (907d)">Raspberry Pi用ブレッドボード接続T型GPIOエクステンションキット</a></li></ul></li>
+<li>Cubieboard
+<ul><li><a href="http://wiki.androciti.com/index.php?Cubieboard" title="Cubieboard (966d)">Cubieboard</a></li>
+<li><a href="http://wiki.androciti.com/index.php?Cubieboard2" title="Cubieboard2 (931d)">Cubieboard2</a></li>
+<li><a href="http://wiki.androciti.com/index.php?Cubietruck%28Cubieboard3%29" title="Cubietruck(Cubieboard3) (788d)">Cubietruck(Cubieboard3)</a></li></ul></li>
+<li>pcDuino
+<ul><li><a href="http://wiki.androciti.com/index.php?pcDuino" title="pcDuino (896d)">pcDuino</a>
+<ul><li><a href="http://wiki.androciti.com/index.php?pcDuino" title="pcDuino (896d)">概要</a></li>
+<li><a href="http://wiki.androciti.com/index.php?pcDuino%A4%CE%A5%BD%A5%D5%A5%C8%A5%A6%A5%A7%A5%A2%A5%C4%A1%BC%A5%EB" title="pcDuinoのソフトウェアツール (901d)">ソフトウェアツール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?pcDuino%A4%CBUbuntu%20OS%A4%F2%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%EB" title="pcDuinoにUbuntu OSをインストール (901d)">Ubuntu OSをインストール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?pcDuino%A4%CBAndroid%A4%F2%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%EB" title="pcDuinoにAndroidをインストール (901d)">Androidをインストール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?pcDuino%A4%CEArduino%20IDE" title="pcDuinoのArduino IDE (901d)">Arduino IDE(開発環境)</a></li>
+<li><a href="http://wiki.androciti.com/index.php?pcDuino%A4%CE%A5%C0%A5%A6%A5%F3%A5%ED%A1%BC%A5%C9%A4%C8%B4%D8%CF%A2%A5%EA%A5%F3%A5%AF" title="pcDuinoのダウンロードと関連リンク (901d)">ダウンロードと関連リンク</a></li></ul></li></ul></li>
+<li>センサー
+<ul><li><a href="http://wiki.androciti.com/index.php?%C4%B6%B2%BB%C7%C8%B5%F7%CE%A5%C2%AC%C4%EA%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="超音波距離測定センサーモジュール (1111d)">超音波距離測定モジュール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?MMA7361L%B2%C3%C2%AE%C5%D9%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="MMA7361L加速度センサーモジュール (1111d)">MMA7361L加速度モジュール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?ADXL345%B2%C3%C2%AE%C5%D9%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="ADXL345加速度センサーモジュール (1111d)">ADXL345加速度モジュール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?BH1750FVI%A5%C7%A5%B8%A5%BF%A5%EB%BE%C8%C5%D9%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="BH1750FVIデジタル照度センサーモジュール (773d)">BH1750FVIデジタル照度モジュール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?HMC5883L%BB%B0%BC%B4%A5%C7%A5%B8%A5%BF%A5%EB%A5%B3%A5%F3%A5%D1%A5%B9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="HMC5883L三軸デジタルコンパスモジュール (611d)">HMC5883L三軸デジタルコンパスモジュール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="MPU-6050三軸加速度三軸ジャイロセンサーモジュール (911d)">MPU-6050三軸加速度三軸ジャイロセンサーモジュール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?%A5%B7%A5%EA%A5%A2%A5%EB%A5%DD%A1%BC%A5%C8%B8%F7%B3%D8%BC%B0%BB%D8%CC%E6%A5%BB%A5%F3%A5%B5%A1%BC" title="シリアルポート光学式指紋センサー (695d)">シリアルポート光学式指紋センサー</a>
+<ul><li><a href="http://wiki.androciti.com/index.php?%A5%B7%A5%EA%A5%A2%A5%EB%A5%DD%A1%BC%A5%C8%B8%F7%B3%D8%BC%B0%BB%D8%CC%E6%A5%BB%A5%F3%A5%B5%A1%BC" title="シリアルポート光学式指紋センサー (695d)">概要</a></li>
+<li><a href="http://wiki.androciti.com/index.php?%A5%B7%A5%EA%A5%A2%A5%EB%A5%DD%A1%BC%A5%C8%B8%F7%B3%D8%BC%B0%BB%D8%CC%E6%A5%BB%A5%F3%A5%B5%A1%BC%A4%CESynoDemo%A5%C4%A1%BC%A5%EB" title="シリアルポート光学式指紋センサーのSynoDemoツール (695d)">SynoDemoツール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?%A5%B7%A5%EA%A5%A2%A5%EB%A5%DD%A1%BC%A5%C8%B8%F7%B3%D8%BC%B0%BB%D8%CC%E6%A5%BB%A5%F3%A5%B5%A1%BC%A4%C8Arduino%A4%CE%B1%FE%CD%D1%CE%E3" title="シリアルポート光学式指紋センサーとArduinoの応用例 (695d)">Arduinoとの応用例</a></li>
+<li><a href="http://wiki.androciti.com/index.php?%A5%B7%A5%EA%A5%A2%A5%EB%A5%DD%A1%BC%A5%C8%B8%F7%B3%D8%BC%B0%BB%D8%CC%E6%A5%BB%A5%F3%A5%B5%A1%BC%A4%CE%20%A5%C0%A5%A6%A5%F3%A5%ED%A1%BC%A5%C9" title="シリアルポート光学式指紋センサーの ダウンロード (695d)">ダウンロード</a></li></ul></li></ul></li>
+<li>カメラ
+<ul><li><a href="http://wiki.androciti.com/index.php?%BE%AE%B7%BF%A5%B7%A5%EA%A5%A2%A5%EBJPEG%A5%AB%A5%E1%A5%E9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB%283.3VTTL%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%A1%A2%A5%D3%A5%C7%A5%AA%BD%D0%CE%CF%C9%D5%A4%AD%29" title="小型シリアルJPEGカメラモジュール(3.3VTTL電圧レベル、ビデオ出力付き) (696d)">小型シリアルJPEGカメラモジュール(3.3V TTL電圧レベル、ビデオ出力付き)</a>
+<ul><li><a href="http://wiki.androciti.com/index.php?%BE%AE%B7%BF%A5%B7%A5%EA%A5%A2%A5%EBJPEG%A5%AB%A5%E1%A5%E9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB%283.3VTTL%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%A1%A2%A5%D3%A5%C7%A5%AA%BD%D0%CE%CF%C9%D5%A4%AD%29" title="小型シリアルJPEGカメラモジュール(3.3VTTL電圧レベル、ビデオ出力付き) (696d)">概要</a></li>
+<li><a href="http://wiki.androciti.com/index.php?%BE%AE%B7%BF%A5%B7%A5%EA%A5%A2%A5%EBJPEG%A5%AB%A5%E1%A5%E9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB%283.3VTTL%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%A1%A2%A5%D3%A5%C7%A5%AA%BD%D0%CE%CF%C9%D5%A4%AD%29%A4%CEVC0706CommTool" title="小型シリアルJPEGカメラモジュール(3.3VTTL電圧レベル、ビデオ出力付き)のVC0706CommTool (696d)">VC0706CommToolツール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?%BE%AE%B7%BF%A5%B7%A5%EA%A5%A2%A5%EBJPEG%A5%AB%A5%E1%A5%E9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB%283.3VTTL%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%A1%A2%A5%D3%A5%C7%A5%AA%BD%D0%CE%CF%C9%D5%A4%AD%29%A4%CE%C0%DF%C4%EA" title="小型シリアルJPEGカメラモジュール(3.3VTTL電圧レベル、ビデオ出力付き)の設定 (696d)">設定</a></li>
+<li><a href="http://wiki.androciti.com/index.php?%BE%AE%B7%BF%A5%B7%A5%EA%A5%A2%A5%EBJPEG%A5%AB%A5%E1%A5%E9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB%283.3VTTL%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%A1%A2%A5%D3%A5%C7%A5%AA%BD%D0%CE%CF%C9%D5%A4%AD%29%A4%C8Arduino%A4%CE%B1%FE%CD%D1%CE%E3" title="小型シリアルJPEGカメラモジュール(3.3VTTL電圧レベル、ビデオ出力付き)とArduinoの応用例 (696d)">Arduinoとの応用例</a></li>
+<li><a href="http://wiki.androciti.com/index.php?%BE%AE%B7%BF%A5%B7%A5%EA%A5%A2%A5%EBJPEG%A5%AB%A5%E1%A5%E9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB%283.3VTTL%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%A1%A2%A5%D3%A5%C7%A5%AA%BD%D0%CE%CF%C9%D5%A4%AD%29%A4%CE%A5%C0%A5%A6%A5%F3%A5%ED%A1%BC%A5%C9" title="小型シリアルJPEGカメラモジュール(3.3VTTL電圧レベル、ビデオ出力付き)のダウンロード (696d)">ダウンロード</a></li></ul></li></ul></li>
+<li>通信
+<ul><li><a href="http://wiki.androciti.com/index.php?USB%A5%B7%A5%EA%A5%A2%A5%EB%CA%D1%B4%B9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="USBシリアル変換モジュール (605d)">USBシリアル変換モジュール</a></li>
+<li><a href="http://wiki.androciti.com/index.php?Bluetooth%A5%B7%A5%EA%A5%A2%A5%EB%CA%D1%B4%B9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB%28%A5%B9%A5%EC%A1%BC%A5%D6%29" title="Bluetoothシリアル変換モジュール(スレーブ) (750d)">Bluetoothシリアル変換モジュール(スレーブ)</a></li>
+<li><a href="http://wiki.androciti.com/index.php?Bluetooth%A5%B7%A5%EA%A5%A2%A5%EB%CA%D1%B4%B9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB%A1%CA%C4%E3%BE%C3%C8%F1%C5%C5%CE%CF%A4%C83.3V%A1%C15V%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%C8%C7%A5%B9%A5%EC%A1%BC%A5%D6%A1%CB" title="Bluetoothシリアル変換モジュール（低消費電力と3.3V〜5V電圧レベル版スレーブ） (892d)">Bluetoothシリアル変換モジュール(低消費電力と3.3V〜5V電圧レベル版スレーブ)</a></li>
+<li><a href="http://wiki.androciti.com/index.php?Bluetooth%A5%B7%A5%EA%A5%A2%A5%EB%CA%D1%B4%B9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB%28%A5%DE%A5%B9%A5%BF%29" title="Bluetoothシリアル変換モジュール(マスタ) (892d)">Bluetoothシリアル変換モジュール(マスタ)</a></li>
+<li><a href="http://wiki.androciti.com/index.php?Bluetooth%A5%B7%A5%EA%A5%A2%A5%EB%CA%D1%B4%B9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB%28%A5%DE%A5%B9%A5%BF%2F%A5%B9%A5%EC%A1%BC%A5%D6%29" title="Bluetoothシリアル変換モジュール(マスタ/スレーブ) (734d)">Bluetoothシリアル変換モジュール(マスタ/スレーブ)</a></li></ul></li>
+<li>LED
+<ul><li><a href="http://wiki.androciti.com/index.php?%A5%D5%A5%EB%A5%AB%A5%E9%A1%BCLED%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="フルカラーLEDモジュール (1122d)">フルカラーLEDモジュール</a></li></ul></li>
+<li>サウンド・オーディオ
+<ul><li><a href="http://wiki.androciti.com/index.php?%A5%D6%A5%B6%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="ブザーモジュール (1024d)">ブザーモジュール</a></li></ul></li>
+<li>SDカード
+<ul><li><a href="http://wiki.androciti.com/index.php?SD%2FMicroSD%A5%AB%A1%BC%A5%C9%A5%B9%A5%ED%A5%C3%A5%C8%A1%A6%A5%D4%A5%F3%A5%D8%A5%C3%A5%C0%CA%D1%B4%B9%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="SD/MicroSDカードスロット・ピンヘッダ変換モジュール (780d)">SD/MicroSDカードスロット・ピンヘッダ変換モジュール</a></li></ul></li>
+<li>電圧レベル変換
+<ul><li><a href="http://wiki.androciti.com/index.php?I2C%CD%D13.3V%C5%C5%B8%BB%C9%D5%A4%AD4%A5%C1%A5%E3%A5%F3%A5%CD%A5%EB5V%2F3.3V%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%A5%B3%A5%F3%A5%D0%A1%BC%A5%BF%28%A5%B9%A5%C8%A5%EC%A1%BC%A5%C8%A5%D4%A5%F3%A5%D8%A5%C3%A5%C0%29" title="I2C用3.3V電源付き4チャンネル5V/3.3V電圧レベルコンバータ(ストレートピンヘッダ) (820d)">I2C用3.3V電源付き4チャンネル5V/3.3V電圧レベルコンバータ(ストレートピンヘッダ)</a></li>
+<li><a href="http://wiki.androciti.com/index.php?I2C%CD%D13.3V%C5%C5%B8%BB%C9%D5%A4%AD2%A5%C1%A5%E3%A5%F3%A5%CD%A5%EB5V%2F3.3V%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%A5%B3%A5%F3%A5%D0%A1%BC%A5%BF%28%A5%B9%A5%C8%A5%EC%A1%BC%A5%C8%A5%D4%A5%F3%A5%D8%A5%C3%A5%C0%29" title="I2C用3.3V電源付き2チャンネル5V/3.3V電圧レベルコンバータ(ストレートピンヘッダ) (820d)">I2C用3.3V電源付き2チャンネル5V/3.3V電圧レベルコンバータ(ストレートピンヘッダ)</a></li>
+<li><a href="http://wiki.androciti.com/index.php?I2C%CD%D13.3V%C5%C5%B8%BB%C9%D5%A4%AD4%A5%C1%A5%E3%A5%F3%A5%CD%A5%EB5V%2F3.3V%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%A5%B3%A5%F3%A5%D0%A1%BC%A5%BF%28%A5%E9%A5%A4%A5%C8%A5%A2%A5%F3%A5%B0%A5%EB%A5%D4%A5%F3%A5%D8%A5%C3%A5%C0%29" title="I2C用3.3V電源付き4チャンネル5V/3.3V電圧レベルコンバータ(ライトアングルピンヘッダ) (820d)">I2C用3.3V電源付き4チャンネル5V/3.3V電圧レベルコンバータ(ライトアングルピンヘッダ)</a></li>
+<li><a href="http://wiki.androciti.com/index.php?I2C%CD%D13.3V%C5%C5%B8%BB%C9%D5%A4%AD2%A5%C1%A5%E3%A5%F3%A5%CD%A5%EB5V%2F3.3V%C5%C5%B0%B5%A5%EC%A5%D9%A5%EB%A5%B3%A5%F3%A5%D0%A1%BC%A5%BF%28%A5%E9%A5%A4%A5%C8%A5%A2%A5%F3%A5%B0%A5%EB%A5%D4%A5%F3%A5%D8%A5%C3%A5%C0%29" title="I2C用3.3V電源付き2チャンネル5V/3.3V電圧レベルコンバータ(ライトアングルピンヘッダ) (820d)">I2C用3.3V電源付き2チャンネル5V/3.3V電圧レベルコンバータ(ライトアングルピンヘッダ)</a>
+<br class="spacer" /><br class="spacer" /><br class="spacer" /></li></ul></li>
+<li><a href="http://wiki.androciti.com/index.php?Amazon" title="Amazon (518d)">Amazonに出品されてる製品</a>
+<div class="spacer">&nbsp;</div></li></ul>
+</div>
+  </td>
+  <td valign="top">
+   <div id="body">
+<p><span style="font-size:18px;display:inline-block;line-height:130%;text-indent:0px"><strong><a href="http://androciti.com/?pid=55896430" rel="nofollow">MPU-6050三軸加速度三軸ジャイロセンサーモジュール</a></strong></span><br class="spacer" /></p>
+<p><a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=MPU-6050_V2.jpg" title="MPU-6050_V2.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=MPU-6050_V2.jpg" alt="MPU-6050_V2.jpg" title="MPU-6050_V2.jpg" width="350" height="350" /></a><br class="spacer" /></p>
+<p>インベンセンス社（InvenSense)の三軸加速度(Accelerometer)三軸ジャイロ(Gyroscope)デバイスMPU-6050(<a href="http://www.invensense.com/mems/gyro/documents/PS-MPU-6000A.pdf" rel="nofollow">英語仕様書</a>)が搭載されているモジュールの完成品です(ピンヘッダは半田付けされていません)。MPU-6050を使用するためのすべての電路が揃っています。<br class="spacer" />
+MPU-6500はインベンセンス社のスマートフォン、タブレット、着用可能なセンサーまたは他の消費市場における二代目の6軸MotionTrackingデバイスです。QFNパッケージはx3x0.9mmの大きさであるため、MPU-6500は世界で最も小さい6軸のMotionTrackingデバイスです。インベンセンス社の最新MEMSジャイロと加速度計の設計革新が組み込まれ、パフォーマンスとコストが改善されました。またチップサイズと電力消費量が大きく減少されました。MPU-6500には、3軸加速度計、3軸ジャイロスコープまたはデジタルモーションプロセッサー(DMP:Digital Motion Processor)が内蔵されています。複雑なモーション合成やタイミング同期または身振り検知等は、デジタルモーションプロセッシングエンジンで行います。ジャイロスコープの最大感度131LSBs/dps、最大測定範囲は±250、±500、±1000、±2000dpsです。加速度計の最大測定範囲は±2g、±4g、±8g、±16gです。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>3.3〜5.0Vの電源入力をサポートしています。</li>
+<li>電源表示LEDが搭載されています。</li>
+<li>I2Cをサポートするための必要な回路が搭載されています。</li>
+<li>ストレートとライトアングル（L型）の2本ピンヘッダが付属されています。</li>
+<li>外形寸法約：20.6mm(L)x15.6mm(W)ｘ3.3mm(H)（実測）</li></ul>
+<p><span style="color:#FF4500"><span style="font-size:18px;display:inline-block;line-height:130%;text-indent:0px">型番</span></span><br class="spacer" /></p>
+<p><a href="http://androciti.com/?pid=55896430" rel="nofollow">SNS-1007V2</a><br class="spacer" /></p>
+<p><span style="color:#FF4500"><span style="font-size:18px;display:inline-block;line-height:130%;text-indent:0px">ピン配置</span></span><br class="spacer" /></p>
+<div class="ie5"><table class="style_table" cellspacing="1" border="0"><tbody><tr><td class="style_td">名称</td><td class="style_td">機能</td></tr><tr><td class="style_td">VCC</td><td class="style_td">3V〜5V電源入力</td></tr><tr><td class="style_td">GND</td><td class="style_td">グランド</td></tr><tr><td class="style_td">SCL</td><td class="style_td">I2Cインターフェースクロック端子</td></tr><tr><td class="style_td">SDA</td><td class="style_td">I2Cインターフェースデータ端子</td></tr><tr><td class="style_td">XDA</td><td class="style_td">マスタI2Cインターフェースデータ端子、外部のセンサーに接続します。</td></tr><tr><td class="style_td">XCL</td><td class="style_td">マスタI2Cインターフェースクロック端子、外部のセンサーに接続します。</td></tr><tr><td class="style_td">AD0</td><td class="style_td">I2CインターフェースアドレスLSB入力（空の時、LOWになります）。(内部の1K抵抗を通ってGNDに繋がっています。）<br class="spacer" />LOWに入力される時：I2Cのアドレスはb1101000(0x68)になります。HIGHに入力される時：　I2Cのアドレスはb1101001(0x69)になります。</td></tr><tr><td class="style_td">INT</td><td class="style_td">割り込み出力</td></tr></tbody></table></div>
+<p><span style="color:#FF0000"><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px">ご注意</span></span><br class="spacer" /></p>
+<p>本モジュールは新版(Revision 2)となりました。電源表示LEDが追加されましたが、使用方法は旧版(Revision 1)と同じです。
+<br class="spacer" /></p>
+<p>以下は、旧版(Revision 1)の写真です。<br class="spacer" /></p>
+<p><a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=MPU-6050.jpg" title="MPU-6050.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=MPU-6050.jpg" alt="MPU-6050.jpg" title="MPU-6050.jpg" width="350" height="350" /></a><br class="spacer" /></p>
+<p><span style="color:#FF4500"><span style="font-size:18px;display:inline-block;line-height:130%;text-indent:0px">バーチャルティーポットアニメを動作させる例</span></span><br class="spacer" /></p>
+<p>準備物：<a href="http://www.androciti.com/?pid=42975028" rel="nofollow">Arduino Uno</a>、<a href="http://androciti.com/?pid=55896430" rel="nofollow">MPU-6050三軸加速度三軸ジャイロセンサーモジュール</a>、<a href="http://www.androciti.com/?pid=48978206" rel="nofollow">ブレットボード</a>、ジャンパワイヤ(オスtoオス）</p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>1.Arduinoとの接続図</strong></span><br class="spacer" />
+<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=Arduino_MPU-6050.jpg" title="Arduino_MPU-6050.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=Arduino_MPU-6050.jpg" alt="Arduino_MPU-6050.jpg" title="Arduino_MPU-6050.jpg" width="600" height="329" /></a><br class="spacer" /></p>
+<p><span style="color:#FF0000"><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px">ご注意</span></span><br class="spacer" /></p>
+<p>以上の図中のMPU-6050三軸加速度三軸ジャイロセンサーモジュールは旧版(Revision 1)です。新版(Revision 2)の接続方法は旧版(Revision 1)と同じです。<br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>2.<a href="http://wiki.androciti.com/download/SNS-1007/SNS-1007_MPU-6050_Module.rar" rel="nofollow">こちらのソフト</a>をダウンロード、解凍し、SNS-1007MPU-6050Moduleフォルダ中のMPU6050とI2CdevフォルダをArduino 開発環境(Arduino IDE)の「libraries」フォルダー<a id="ex_notetext_1" href="#ex_notefoot_1" class="note_super" title="Arduino開発環境(Arduino IDE)のlibrariesフォルダーのデフォルト位置:PC: My Documents\Arduino\librariesMac: (home directory)/Documents/Arduino/librariesLinux: (home directory)/sketchbook/libraries">*1</a>にコピーしてください。</strong></span><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>3.インベンセンス社の<a href="http://www.invensense.com/developers/index.php?_r=default" rel="nofollow">開発者コーナー</a>(<a href="http://www.invensense.com/developers/index.php?_r=default" rel="nofollow">http://www.invensense.com/developers/index.php?_r=default</a>)で、アカウントを作ってください。</strong></span><br class="spacer" />
+<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=InvenSenseDeveloper.jpg" title="InvenSenseDeveloper.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=InvenSenseDeveloper.jpg" alt="InvenSenseDeveloper.jpg" title="InvenSenseDeveloper.jpg" width="400" height="294" /></a><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>4.アカウントにログインして、<a href="http://www.invensense.com/developers/index.php?_r=downloads" rel="nofollow">Downloads</a>(<a href="http://www.invensense.com/developers/index.php?_r=downloads" rel="nofollow">http://www.invensense.com/developers/index.php?_r=downloads</a>)で、「TeaPot and Pointer Demo App」をダウンロード、 解凍してください。</strong></span><br class="spacer" />
+<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=InvenSenseDownload.jpg" title="InvenSenseDownload.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=InvenSenseDownload.jpg" alt="InvenSenseDownload.jpg" title="InvenSenseDownload.jpg" width="450" height="331" /></a><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>5.解凍された「Teapot demo app-&gt;Release]フォルダの中のTeaPot.exeと「Teapot demo app-&gt;gl]フォルダの中のglut32.dllを任意のフォルダにコピーしてください(例として「work」フォルダにコピーします)。</strong></span><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>6.「work」フォルダの中のTeaPot.exeファイルを右クリックして、「送る-&gt;デスクトップ(ショートカットを作成)」をクリックしてショートカットを作成してください。</strong></span><br class="spacer" />
+<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=TeapotRightClick.jpg" title="TeapotRightClick.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=TeapotRightClick.jpg" alt="TeapotRightClick.jpg" title="TeapotRightClick.jpg" width="450" height="332" /></a><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>7.Arduino 開発環境で、メニュー「ファイル-&gt;スケッチの例-&gt;MPU6050-&gt;Examples-&gt;MPU6050_DMP6」を開いて、Unoに書き込んでください。</strong></span><br class="spacer" />
+<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=OpenFile.jpg" title="OpenFile.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=OpenFile.jpg" alt="OpenFile.jpg" title="OpenFile.jpg" width="400" height="434" /></a><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>8.「ツール-&gt;シリアルモニタ」を開いて、ボーレートを115200bpsに設定してください。</strong></span><br class="spacer" />
+<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=OpenSerial.jpg" title="OpenSerial.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=OpenSerial.jpg" alt="OpenSerial.jpg" title="OpenSerial.jpg" width="400" height="480" /></a><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>9.以下の画面が表示されたら、任意キー(例として、'a'をいれます。)を入力して送信してください。その後、シリアルモニタを閉じてください。</strong></span><br class="spacer" />
+<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=SerialPort.jpg" title="SerialPort.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=SerialPort.jpg" alt="SerialPort.jpg" title="SerialPort.jpg" width="400" height="421" /></a><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>10.デスクトップ上のTeaPot.exeのショートカットを右クリックして、プロパティをクリックしてください。「リンク先」のテキストボックス内末尾に、 Unoがパソコンに接続しているシリアルポートの番号を追加してください。その後、TeaPot.exeのショートカットをダブルクリックして実行してください。</strong></span><br class="spacer" />
+<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=TeapotProperty.jpg" title="TeapotProperty.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=TeapotProperty.jpg" alt="TeapotProperty.jpg" title="TeapotProperty.jpg" width="436" height="473" /></a><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>11. 以下の画面が表示されたら、MPU-6050三軸加速度三軸ジャイロセンサーモジュールを載せているブレットボードを動かして、画面上のティーポットアニメを動作させてください。</strong></span><br class="spacer" />
+<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;openfile=Teapot.jpg" title="Teapot.jpg"><img src="http://wiki.androciti.com/index.php?plugin=ref&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB&amp;src=Teapot.jpg" alt="Teapot.jpg" title="Teapot.jpg" width="400" height="421" /></a><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>12. 動作している様子は、以下のyoutubeのビデオをご覧ください。</strong></span><br class="spacer" /></p>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/so3mQHUuaXM" frameborder="0" allowfullscreen></iframe>
+<p><span style="color:#FF4500"><span style="font-size:18px;display:inline-block;line-height:130%;text-indent:0px">ダウンロード</span></span><br class="spacer" />
+<a href="http://wiki.androciti.com/download/SNS-1007/SNS-1007_MPU-6050_Module_Schematic_Revison2.jpg" rel="nofollow">1.新版(Revision 2)MPU-6050三軸加速度三軸ジャイロセンサーモジュールの回路図</a><br class="spacer" />
+<a href="http://wiki.androciti.com/download/SNS-1007/SNS-1007_MPU-6050_Module_Schematic.jpg" rel="nofollow">2.旧版(Revision 1)MPU-6050三軸加速度三軸ジャイロセンサーモジュールの回路図</a><br class="spacer" />
+<a href="http://wiki.androciti.com/download/SNS-1007/SNS-1007_MPU-6050_Module.rar" rel="nofollow">3.バーチャルティーポットアニメを動作させる例のソースコード</a><br class="spacer" />
+<a href="http://wiki.androciti.com/download/SNS-1007/MPU6050-mpu6000AV3.2.pdf" rel="nofollow">4.MPU-6050英語仕様書</a><br class="spacer" /></p>
+<p><span style="font-size:14px;display:inline-block;line-height:130%;text-indent:0px"><strong>ご注意</strong></span><br class="spacer" />
+本モシュールをお使いになるには、ある程度の電気に関する知識を必要とします。本モシュールを使用したことによる損害、損失については一切補償しません。</p>
+</div>
+  </td>
+ </tr>
+</table>
+
+<div id="note"><hr class="note_hr" /><a id="ex_notefoot_1" href="#ex_notetext_1" class="note_super">*1&nbsp;</a>
+<span class="small">Arduino開発環境(Arduino IDE)のlibrariesフォルダーのデフォルト位置:<br class="spacer" />PC: My Documents\Arduino\libraries<br class="spacer" />Mac: (home directory)/Documents/Arduino/libraries<br class="spacer" />Linux: (home directory)/sketchbook/libraries<br class="spacer" /></span>
+<br /></div>
+
+<div id="attach">
+<hr class="full_hr" />添付ファイル: <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=MPU-6050_V2.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/09/26 09:39:54 176.4KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />MPU-6050_V2.jpg</a> <span class="small">1022件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=MPU-6050_V2.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=Arduino_MPU-6050.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/03/09 13:39:07 91.0KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />Arduino_MPU-6050.jpg</a> <span class="small">1652件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=Arduino_MPU-6050.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=MPU-6050.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/03/09 13:38:53 153.3KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />MPU-6050.jpg</a> <span class="small">906件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=MPU-6050.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=Arduino_MPU6050.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/03/09 13:37:14 91.0KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />Arduino_MPU6050.jpg</a> <span class="small">152件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=Arduino_MPU6050.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=OpenFile.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/02/25 12:19:33 74.5KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />OpenFile.jpg</a> <span class="small">502件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=OpenFile.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=SerialPort.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/02/25 12:00:59 27.1KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />SerialPort.jpg</a> <span class="small">465件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=SerialPort.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=ArduinoMPU6050.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/02/25 10:27:41 91.0KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />ArduinoMPU6050.jpg</a> <span class="small">374件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=ArduinoMPU6050.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=Product550.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/02/25 09:48:03 153.3KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />Product550.jpg</a> <span class="small">151件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=Product550.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=Teapot.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/02/24 21:36:16 15.8KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />Teapot.jpg</a> <span class="small">606件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=Teapot.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=TeapotProperty.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/02/24 21:33:23 56.5KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />TeapotProperty.jpg</a> <span class="small">422件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=TeapotProperty.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=OpenSerial.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/02/24 21:33:02 85.9KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />OpenSerial.jpg</a> <span class="small">404件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=OpenSerial.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=TeapotRightClick.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/02/24 21:19:56 42.3KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />TeapotRightClick.jpg</a> <span class="small">455件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=TeapotRightClick.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=InvenSenseDownload.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/02/24 21:17:26 112.2KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />InvenSenseDownload.jpg</a> <span class="small">1067件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=InvenSenseDownload.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ <a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=open&amp;file=InvenSenseDeveloper.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="2013/02/24 21:14:48 188.2KB"><img src="image/file.png" width="20" height="20" alt="file" style="border-width:0px" />InvenSenseDeveloper.jpg</a> <span class="small">488件</span>
+<span class="small">[<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=info&amp;file=InvenSenseDeveloper.jpg&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB" title="添付ファイルの情報">詳細</a>]</span>
+ 
+</div>
+
+<hr class="full_hr" />
+<!-- Toolbar -->
+<div id="toolbar">
+ <a href="http://wiki.androciti.com/index.php?%A5%A2%A5%F3%A5%C9%A5%ED%20%A5%B7%A5%C6%A5%A3wiki"><img src="image/top.png" width="20" height="20" alt="トップ" title="トップ" /></a>
+ &nbsp;
+ 	<a href="http://wiki.androciti.com/index.php?cmd=edit&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB"><img src="image/edit.png" width="20" height="20" alt="編集" title="編集" /></a>			<a href="http://wiki.androciti.com/index.php?cmd=unfreeze&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB"><img src="image/unfreeze.png" width="20" height="20" alt="凍結解除" title="凍結解除" /></a>	  <a href="http://wiki.androciti.com/index.php?cmd=diff&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB"><img src="image/diff.png" width="20" height="20" alt="差分" title="差分" /></a>	<a href="http://wiki.androciti.com/index.php?cmd=backup&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB"><img src="image/backup.png" width="20" height="20" alt="バックアップ" title="バックアップ" /></a>			<a href="http://wiki.androciti.com/index.php?plugin=attach&amp;pcmd=upload&amp;page=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB"><img src="image/file.png" width="20" height="20" alt="添付" title="添付" /></a>		<a href="http://wiki.androciti.com/index.php?plugin=template&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB"><img src="image/copy.png" width="20" height="20" alt="複製" title="複製" /></a>	<a href="http://wiki.androciti.com/index.php?plugin=rename&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB"><img src="image/rename.png" width="20" height="20" alt="名前変更" title="名前変更" /></a> <a href="http://wiki.androciti.com/index.php?MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB"><img src="image/reload.png" width="20" height="20" alt="リロード" title="リロード" /></a> &nbsp;
+	<a href="http://wiki.androciti.com/index.php?plugin=newpage&amp;refer=MPU-6050%BB%B0%BC%B4%B2%C3%C2%AE%C5%D9%BB%B0%BC%B4%A5%B8%A5%E3%A5%A4%A5%ED%A5%BB%A5%F3%A5%B5%A1%BC%A5%E2%A5%B8%A5%E5%A1%BC%A5%EB"><img src="image/new.png" width="20" height="20" alt="新規" title="新規" /></a> <a href="http://wiki.androciti.com/index.php?cmd=list"><img src="image/list.png" width="20" height="20" alt="一覧" title="一覧" /></a> <a href="http://wiki.androciti.com/index.php?cmd=search"><img src="image/search.png" width="20" height="20" alt="単語検索" title="単語検索" /></a> <a href="http://wiki.androciti.com/index.php?RecentChanges"><img src="image/recentchanges.png" width="20" height="20" alt="最終更新" title="最終更新" /></a> &nbsp; <a href="http://wiki.androciti.com/index.php?Help"><img src="image/help.png" width="20" height="20" alt="ヘルプ" title="ヘルプ" /></a> &nbsp; <a href="http://wiki.androciti.com/index.php?cmd=rss&amp;ver=1.0"><img src="image/rss.png" width="36" height="14" alt="最終更新のRSS" title="最終更新のRSS" /></a></div>
+
+<div id="lastmodified">Last-modified: 2013-09-26 (木) 09:57:36  (911d)<br>Androciti Wiki is a site of <a href="http://www.androciti.com" target="_blank">Androciti.</a></div>
+
+<div id="related">Link: <a href="http://wiki.androciti.com/index.php?%A5%A2%A5%F3%A5%C9%A5%ED%20%A5%B7%A5%C6%A5%A3wiki">アンドロ シティwiki</a>(624d)
+ <a href="http://wiki.androciti.com/index.php?MenuBar">MenuBar</a>(624d)</div>
+
+<!--div id="footer">
+ Site admin: <a href="http://wiki.androciti.com">androciti</a><p />
+ <strong>PukiWiki 1.4.7</strong> Copyright &copy; 2001-2006 <a href="http://pukiwiki.sourceforge.jp/">PukiWiki Developers Team</a>. License is <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>.<br /> Based on "PukiWiki" 1.3 by <a href="http://factage.com/yu-ji/">yu-ji</a>.
+ Powered by PHP 5.2.17. HTML convert time: 1.051 sec.
+</div-->
+
+</body>
+</html>

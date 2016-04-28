@@ -9,7 +9,7 @@
 
 //motermodeDefinitions
 typedef enum {
-  tw_phase8,
+  tw_phase8 = 0,
 	tw_phaseF,
 	one_tw_phase2p,
 	one_tw_phaseF,
@@ -18,7 +18,7 @@ typedef enum {
 
 
 	//data
-#define MAX_SPEED 150
+#define MAX_SPEED 10000
 #define MIN_SPEED 0.1
 #define Index_gain_flag 5
 #define MSTAP 120
@@ -39,17 +39,17 @@ typedef enum {
 #define Moter_2_M2 31
 #define Moter_2_M3 32
 #define Moter_2_syn 33
-#define Moter_2_Sequential 34
-#define Moter_2_Refsleep 35
+#define Moter_2_Refsleep 34
+#define Moter_2_Sequential 35
+
 
 #define Moter_3_clock 36
 #define Moter_3_M1 37
 #define Moter_3_M2 38
 #define Moter_3_M3 39
 #define Moter_3_syn 40
-#define Moter_3_Sequential 41
-#define Moter_3_Refsleep 42
-
+#define Moter_3_Refsleep 41
+#define Moter_3_Sequential 42
 
 
 //protypefunction
